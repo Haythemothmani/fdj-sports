@@ -1,0 +1,16 @@
+<div class="card m-3" style="height: 200px">
+    <div class="bg-light shadow-xl rounded-lg overflow-hidden d-flex" style="width: 100%;">
+        <div class="" style="width: 200px; position: relative;" >
+            <img [src]="player.thumbnail" style="width: 200px; display:flex; align-items: center; justify-content: center;"/>
+        </div>
+        <div style="width: 100%; height: 100%;">
+            <div class="p-2" style="font-size: 14px;">
+                <p class="font-bold text-xl md:text-2xl" style="font-weight: 700">{{player.name}}</p>
+                <p class="text-gray-700 md:text-lg font-italic mb-0">{{player.position}}</p>
+                <p class="text-gray-700 md:text-lg font-italic mb-0" >BirthDate: {{player.born | date}}</p>
+                <p *ngIf="player.signin && player.signin.amount " class="text-gray-700 md:text-lg font-italic">Price: {{player.signin.amount | currency: player.signin.currency}}</p>
+                <p *ngIf="!player.signin || !player.signin.amount" class="text-gray-700 md:text-lg font-italic">Price: Free</p>
+            </div>
+        </div>
+    </div>
+</div>

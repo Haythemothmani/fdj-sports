@@ -1,0 +1,11 @@
+<h3> League Teams </h3>
+<div class="row flex flex-wrap">
+    <div *ngFor="let team of teams" class="col-sm-6 col-md-4 col-lg-2">
+        <a [routerLink]="['/teams', team._id]">
+            <app-team-card [name]="team.name" [thumbnail]="team.thumbnail"></app-team-card>
+        </a>
+    </div>
+    <div *ngIf="teams.length === 0">
+        <h2 style="margin: auto"> No team to display </h2>
+    </div>
+</div>
